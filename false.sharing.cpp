@@ -5,6 +5,7 @@
 #include <chrono> 
 #include <iomanip>
 #include <iostream> 
+#include <functional>
 using namespace std; 
 using namespace std::chrono; 
 

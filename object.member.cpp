@@ -47,7 +47,7 @@ int main()
     // Loop the memory
     for (int i = 0; i < repeat_num; i++) { 
         int idx = i % obj_num;
-        if (bad[ idx].isLive) {
+        if (bad[idx].isLive) {
             for (int j=0; j<pad_size; j++) {
                 bad[idx].padding[j] += j;
             }

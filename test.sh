@@ -13,7 +13,7 @@ COLOR_ERROR='\033[1;31m'
 
 function compile(){
     CC=g++
-    OPT="-std=c++11"
+    OPT="-std=c++11 -pthread"
     case $3 in
         1) OPT="${OPT} -g";; 
         2) OPT="${OPT} -O2";;
@@ -118,11 +118,11 @@ function cache_hierarchy_bandwidth() {
 function cache_conflicts() {
     NAME="cache.conflicts"
     compile_name ${NAME} 2
-    echo "| count |   4    |   64  | 2048  | 4096  |"
-    echo "------------------------------------------"
-    for count in {1..18}; do
+    echo "| count |   4    |   64  | 2048  | 4096  | 8192  |"
+    echo "--------------------------------------------------"
+    for count in {1..24}; do
         printf "| %5d | " ${count}
-        for inc in 4 64 2048 4096; do
+        for inc in 4 64 2048 4096 8192; do
             time=$(${TARGET} ${count} ${inc})
             printf "%6d |" ${time}
         done

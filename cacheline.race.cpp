@@ -24,7 +24,7 @@ int main(int argc, char** argv)
  
     auto proc = [](int* data) {
         for(int i = 0; i < COUNT; ++i)
-            *data += rand();
+            *data = *data + rand() % 100;
     };
     
     auto start_time = high_resolution_clock::now();
